@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input App</title>
+</head>
+<body>
+  <input type="text" id="inputBox" placeholder="Enter a value">
+  <button id="submitButton">Submit</button>
+
+  <ul id="valueList"></ul>
+
+  <script>
+    const inputBox = document.getElementById('inputBox');
+    const submitButton = document.getElementById('submitButton');
+    const valueList = document.getElementById('valueList');
+
+    submitButton.addEventListener('click', function() {
+      const inputValue = inputBox.value;
+
+      const listItem = document.createElement('li');
+      listItem.textContent = inputValue;
+
+      valueList.appendChild(listItem);
+
+      inputBox.value = '';
+    });
+  </script>
+</body>
+</html>

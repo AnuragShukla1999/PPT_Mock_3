@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Navbar</title>
+  <style>
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-menu li {
+      margin-right: 10px;
+    }
+
+    .navbar-menu li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    /* Media queries for responsive design */
+    @media screen and (max-width: 600px) {
+      .navbar-menu {
+        display: none;
+      }
+
+      .navbar-menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 13%;
+        left: 0;
+        right: 0;
+        padding: 10px;
+      }
+
+      .navbar-menu.active li {
+        margin-bottom: 10px;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">Logo</a>
+    <div class="hamburger-menu">&#9776;</div>
+    <ul class="navbar-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    hamburgerMenu.addEventListener('click', function() {
+      navbarMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
